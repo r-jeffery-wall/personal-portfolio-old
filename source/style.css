@@ -1,0 +1,55 @@
+html, body {
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    background-color: seashell;
+    opacity: 0.9;
+}
+
+.banner {
+    width: 99%;
+    height: 1200px;
+    background: url(./banner_image.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Young Serif', serif;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 75px;
+}
+
+ul {
+    list-style: none;
+}
+
+a { 
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    position: sticky;
+    top: 0px;
+}
+.nav-links {
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border: 1px solid black;
+}
+
+.nav-links li {
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+
+.nav-links li a:hover {
+    color: white;
+}
