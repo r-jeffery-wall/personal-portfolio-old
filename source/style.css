@@ -4,6 +4,7 @@ html, body {
     font-size: 22px;
     background-color: seashell;
     opacity: 0.9;
+    text-align: center;
 }
 
 .banner {
@@ -41,7 +42,7 @@ nav {
     display: flex;
     justify-content: center;
     margin: 0;
-    border: 1px solid black;
+    border: 1px solid #070e15;
 }
 
 .nav-links li {
@@ -56,4 +57,12 @@ nav {
 
 .nav-links li+li::before {
     content: "|";
+}
+
+.external-projects-link {
+    text-decoration: underline;
+}
+
+.external-projects-link:hover {
+    color: #3f82bf;
 }
