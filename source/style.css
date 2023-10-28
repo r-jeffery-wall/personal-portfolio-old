@@ -89,6 +89,10 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: gray;
+    border: 1px solid #070e15;
+    border-radius: 10px;
+    color: white;
 }
 
 .language-icon {
