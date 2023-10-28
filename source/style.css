@@ -22,6 +22,15 @@ a {
 a:hover {
     color: #3f82bf;
 }
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    column-gap: 1rem;
+}
+
 /* Main Site Banner */
 
 .banner {
@@ -59,10 +68,11 @@ nav {
     border: 1px solid #070e15;
 }
 
-.nav-links li {
+.nav-links a {
     display: inline-block;
     text-align: center;
     margin: 5px 0;
+    color: black;
 }
 
 .nav-links li a:hover {
@@ -123,5 +133,14 @@ footer {
     .social img {
         width: 50px;
         height: 50px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
