@@ -15,10 +15,13 @@ ul {
 }
 
 a { 
-    text-decoration: none;
-    color: black;
+    text-decoration: underline;
+    color: grey;
 }
 
+a:hover {
+    color: #3f82bf;
+}
 /* Main Site Banner */
 
 .banner {
@@ -86,14 +89,6 @@ nav {
 
 .language h4 {
     font-size: 2rem;
-}
-
-.external-projects-link {
-    text-decoration: underline;
-}
-
-.external-projects-link:hover {
-    color: #3f82bf;
 }
 
 /* Footer */
