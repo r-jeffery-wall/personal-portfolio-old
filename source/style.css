@@ -6,10 +6,8 @@ html, body {
     background-color: seashell;
     opacity: 0.9;
     text-align: center;
-}
-
-.banner h1 {
-    font-size: 75px;
+    margin: auto 0;
+    font-size: 18px;
 }
 
 ul {
@@ -28,6 +26,7 @@ a {
     height: 1200px;
     background: url(./banner_image.jpg);
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,12 +34,18 @@ a {
     text-align: center;
 }
 
+.banner h1 {
+    font-size: 4.75rem;
+}
+
 /* Nav-bar */
 
 nav {
     position: sticky;
     top: 0px;
+    font-size: 1.75rem;
 }
+
 .nav-links {
     width: 100%;
     background-color: gray;
@@ -96,4 +101,16 @@ footer {
 
 .social img:hover {
     transform: scale(1.1);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 12px;
+    }
+
+    .social img {
+        width: 50px;
+        height: 50px;
+    }
 }
