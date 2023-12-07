@@ -23,6 +23,10 @@ a:hover {
     color: #3f82bf;
 }
 
+p {
+    padding: 0 1em;
+}
+
 .grid-container {
     width: 100%;
     display: grid;
@@ -36,6 +40,11 @@ a:hover {
     border-radius: 15px;
     width: 50%;
     margin: 2em auto;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    text-decoration: underline;
 }
 
 .img-hover {
@@ -70,6 +79,7 @@ nav {
     position: sticky;
     top: 0px;
     font-size: 1.75rem;
+    background-color: seashell;
 }
 
 .nav-links {
@@ -87,7 +97,7 @@ nav {
 }
 
 .nav-links li a:hover {
-    color: white;
+    color: #3f82bf;
 }
 
 .nav-links li+li::before {
