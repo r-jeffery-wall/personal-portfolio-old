@@ -38,6 +38,14 @@ a:hover {
     margin: 2em auto;
 }
 
+.img-hover {
+    transition: all 0.5s;
+}
+
+.img-hover:hover {
+    transform: scale(1.1);
+}
+
 /* Main Site Banner */
 
 .banner {
@@ -112,17 +120,12 @@ footer {
 }
 
 .social img {
-    width: 100px;
-    height: 100px;
-    transition: all 0.5s;
-}
-
-.social img:hover {
-    transform: scale(1.1);
+    width: 85px;
+    height: 85px;
 }
 
 /* Media Queries */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 800px) {
     html {
         font-size: 12px;
     }
@@ -131,9 +134,18 @@ footer {
         width: 50px;
         height: 50px;
     }
+
+    .lang-logo {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
+    .content-container {
+        width: 95%;
+    }
+    
     .grid-container {
         display: flex;
         flex-direction: column;
