@@ -116,6 +116,28 @@ nav {
     height: 75px;
 }
 
+.project-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-container img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    border: 1px solid #070e15;
+    border-radius: 15px;
+}
+
+.img-right {
+    margin-left: 2rem;
+}
+
+.img-left {
+    margin-right: 2rem;
+}
 
 /* Footer */
 footer {
@@ -161,5 +183,17 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .project-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-container img {
+        max-width: 100%;
     }
 }
