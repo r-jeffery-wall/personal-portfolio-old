@@ -144,6 +144,12 @@ nav {
     width: 100%;
 }
 
+#github-contributions {
+    max-width: 75%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
 /* Footer */
 footer {
     background-color: gray;
