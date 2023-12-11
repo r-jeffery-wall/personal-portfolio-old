@@ -150,6 +150,13 @@ nav {
     margin: auto;
     display: block;
 }
+
+.slider-text {
+    position: relative;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.75s;
+}
 /* Footer */
 footer {
     background-color: gray;
