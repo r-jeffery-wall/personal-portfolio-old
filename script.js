@@ -19,6 +19,9 @@ const sliderHover = (event) => {
 
 const sliderHoverOff = (event) => {
    //console.log("sliding off.")
+   if (event.target.classList.contains("highlighted")) { // Highlighted labels will not be hidden.
+        return;
+   }
    let target;
     if (event.target.classList.contains("lang-logo")) {
         target = event.target.parentElement.children.item(1); // The event target will almost always be the <img> element, so the sliding text is the element's sibling.
