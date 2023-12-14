@@ -40,7 +40,7 @@ const sliderHoverOff = (event) => {
 // Below could probably be better achieved using a framework. Come back to this.
 const highlight = (event) => { //https://stackoverflow.com/questions/52743841/find-and-highlight-word-in-text-using-js
     const targetText = event.target.id;
-    let regex = new RegExp(targetText, 'gi');
+    let regex = new RegExp(targetText, 'g');
 
     if (event.target.classList.contains("highlighted")) { //Turns the text highlight off if it is already enabled.
         event.target.classList.remove("highlighted");
@@ -55,7 +55,7 @@ const highlight = (event) => { //https://stackoverflow.com/questions/52743841/fi
 }
 
 const highlightOff = (targetText) => { // Helper function to turn off text-highlighting.
-    let regex = new RegExp(`<mark>${targetText}</mark>`, 'gi');
+    let regex = new RegExp(`<mark>${targetText}</mark>`, 'g');
     searchElements.forEach(element => {
         let innerText = element.innerHTML;
         element.innerHTML = innerText.replace(regex, targetText);
