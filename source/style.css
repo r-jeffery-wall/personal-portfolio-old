@@ -226,3 +226,10 @@ footer {
         max-width: 100%;
     }
 }
+
+@media (hover: none) { /* Sliding labels will be shown if device has no hover capability. */
+    .slider-text {
+        bottom: 0;
+        opacity: 100;
+    }
+}
