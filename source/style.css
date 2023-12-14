@@ -56,6 +56,13 @@ p {
     transform: scale(1.1);
 }
 
+mark {
+    text-decoration: underline;
+    font-weight: 900;
+    background-color: seashell;
+    color: navy;
+}
+
 /* Main Site Banner */
 
 .banner {
