@@ -1,6 +1,30 @@
 const sliders = document.querySelectorAll('.slider');
 const langLogos = document.querySelectorAll('.lang-logo');
 const searchElements = document.querySelectorAll('p');
+// Initialisation of values for the background.
+const canvas = document.getElementById('matrix');
+const context = canvas.getContext('2d');
+const button = document.getElementById('background-off');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nums = '0123456789';
+
+const alphabet = katakana + latin + nums;
+
+const fontSize = 16;
+const columns = canvas.width / fontSize; // This uses the font size to calculate how many columns can fit on the screen.
+
+const rainDrops = []; // The index of each element in the array will represent the x axis, the value the y.
+for (let x = 0; x < columns; x++ ) {
+    rainDrops[x] = 1; // The y axis for each column is initialised to 1.
+}
+
+// This acts as the toggle for the raindrop background.
+let backgroundActivated = true;
 
 const sliderHover = (event) => {
     //console.log("sliding")
@@ -62,6 +86,36 @@ const highlightOff = (targetText) => { // Helper function to turn off text-highl
     })
 }
 
+const matrixRain = () => { // https://medium.com/@javascriptacademy.dev/matrix-raining-code-effect-using-javascript-3da1e4cdf3da
+    if (backgroundActivated !== true) { // Logic that I added for the user to toggle the background animation on or off.
+        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+	    context.fillRect(0, 0, canvas.width, canvas.height);
+        return
+    }
+    // Function for drawing the 'raindrops'.
+    context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	
+	context.fillStyle = '#0F0';
+	context.font = fontSize + 'px monospace';
+
+	for(let i = 0; i < rainDrops.length; i++)
+	{
+		const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length)); // A random character is chosen from our alphabet.
+		context.fillText(text, i*fontSize, rainDrops[i]*fontSize); // The random character is drawn at specified coordinates.
+		
+		if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){ //This handles what happens when the raindrops scroll off the screen.
+			rainDrops[i] = 0;
+        }
+		rainDrops[i]++; // Increases the x axis.
+	}
+}
+
+const canvasResize = () => { // Helper function to handle resizing of the window for the background effect.
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
 sliders.forEach(element => {
     element.addEventListener('mouseover', sliderHover);
     element.addEventListener('mouseleave', sliderHoverOff);
@@ -70,3 +124,11 @@ sliders.forEach(element => {
 langLogos.forEach(element => {
     element.addEventListener('click', highlight)
 })
+
+button.onclick = () => { // Toggles background on/off.
+    backgroundActivated = !backgroundActivated;
+}
+
+window.onresize = canvasResize; // Upon resizing of the window the canvas will automatically resize, allowing the background effect to display properly.
+
+setInterval(matrixRain, 50);
