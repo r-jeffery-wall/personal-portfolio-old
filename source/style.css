@@ -261,8 +261,13 @@ footer {
         font-size: 0.8rem;
     }
 
+    .social-img {
+        width: 48px;
+        height: 48px;
+    }
+
     .social-links li {
-        margin: 0 1rem;
+        margin: 0 .4rem;
     }
 }
 
