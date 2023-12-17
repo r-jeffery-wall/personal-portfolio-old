@@ -116,6 +116,20 @@ const canvasResize = () => { // Helper function to handle resizing of the window
     canvas.height = window.innerHeight;
 }
 
+const secondaryHeader = () => {
+    const banner = document.getElementById("main-banner");
+    const secondaryBanner = document.getElementById("secondary-header");
+    if (window.scrollY > (banner.offsetHeight)) {
+        secondaryBanner.style.opacity = 100;
+        secondaryBanner.style.margin = "1rem";
+        secondaryBanner.style.height = "auto";
+    } else {
+        secondaryBanner.style.margin = 0;
+        secondaryBanner.style.height = "1px";
+        secondaryBanner.style.opacity = 0;
+    }
+}
+
 sliders.forEach(element => {
     element.addEventListener('mouseover', sliderHover);
     element.addEventListener('mouseleave', sliderHoverOff);
@@ -128,6 +142,8 @@ langLogos.forEach(element => {
 button.onclick = () => { // Toggles background on/off.
     backgroundActivated = !backgroundActivated;
 }
+
+window.addEventListener("scroll", secondaryHeader);
 
 window.onresize = canvasResize; // Upon resizing of the window the canvas will automatically resize, allowing the background effect to display properly.
 
